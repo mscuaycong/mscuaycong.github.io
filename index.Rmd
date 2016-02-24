@@ -1,0 +1,112 @@
+---
+title       : Analyze and Plot 2 Years of Monthly Numeric Data
+subtitle    : Developing Data Products Assignment
+author      : M. Cuaycong
+job         : 
+framework   : io2012     # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft,selfcontained }
+knit        : slidify::knit2slides
+--- 
+
+## Overview
+
+### This application will automate the usual comparative analysis we often find ourselves doing.
+
+
+---
+
+##  The App
+
+<div style='text-align: center;'>
+    <img height='560' src='figure/App.png' />
+</div>
+
+--- .class #id1 
+
+## The Data
+
+> User uploads a csv data file with headers, that looks like this.  The file will be read into a data frame and will have 3 columns and 12 monthly observations.  The first column will need to have month abbreviated values.
+
+```{r echo=FALSE}
+ month<-c("jan","feb","mar","apr","may","jun","jul","aug","sep",
+                        "oct","nov","dec")
+ year1<-seq(10,by=10,length=12)
+ year2<-year1*1.2
+               
+ MyData<-data.frame(month,year1,year2)
+ kable(MyData)
+ #MyData
+```
+
+---
+
+## Plot the Data
+#### User has 2 standard plots, one of which is a 2-line plot.
+
+
+```{r echo=FALSE,message=FALSE, cache=TRUE}
+ require(ggplot2)
+ require(reshape2)
+ month<-c("jan","feb","mar","apr","may","jun","jul","aug","sep",
+                        "oct","nov","dec")
+ year1<-seq(10,by=10,length=12)
+ year2<-year1*1.2
+               
+ MyData<-data.frame(month,year1,year2)
+ MyData$month <- factor(MyData$month, levels = MyData$month[order(row(MyData)[,1])])
+ 
+#Transform data to Long Format
+MDlong <-melt(MyData, id.vars = "month",
+              variable.name = "year") 
+
+#Plot 2 separate lines based on year              
+g<- ggplot(MDlong, aes(x = month,y=value, group=year, shape=year, color=year)) + 
+     geom_line() +
+     geom_point() +
+     ylab(label="Value") + 
+     xlab("Month")
+
+g
+```
+
+
+---
+
+## Summarize the Data
+
+```{r echo=FALSE}
+  x<-"dec"
+  y<-12
+       MDmonth<-MyData[1:y,]
+       
+       ytd1<-colSums(MDmonth[2])# year1 col
+       ytd2<-colSums(MDmonth[3])# year2 col
+       ytdchg <-round((ytd2/ytd1)-1,4)
+       mtdchg <-round((MDmonth[y,3]/MDmonth[y,2])-1,4)
+       m2mchg <- if(y>1) round((MDmonth[y,3]/MDmonth[y-1,3])-1,4) else
+            round((MDmonth[y,3]/MDmonth[12,2]) - 1,4)
+       
+       
+       disp <- c(x,MDmonth[y,2],MDmonth[y,3],mtdchg*100)
+       disp <- rbind(disp,c("YTD",ytd1,ytd2,ytdchg*100))
+       disp<-as.data.frame(disp)
+       rownames(disp)<-NULL
+       colnames(disp)<-c("Period","Year1","Year2","%Chg-YoY")
+       
+ kable(disp)
+```
+
+
+---.class1 #id1 bg:lightblue
+
+## That's It
+
+> Try the app...[Click Here](https://mscuaycong.shinyapps.io/DDPAssign/)
+
+
+
+# **THANKS for your time.**
+

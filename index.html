@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analyze and Plot 2 Years of Monthly Numeric Data</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Analyze and Plot 2 Years of Monthly Numeric Data">
+  <meta name="author" content="M. Cuaycong">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Analyze and Plot 2 Years of Monthly Numeric Data</h1>
+    <h2>Developing Data Products Assignment</h2>
+    <p>M. Cuaycong<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Overview</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>This application will automate the usual comparative analysis we often find ourselves doing.</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>The App</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='560' src='figure/App.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id1" style="background:;">
+  <hgroup>
+    <h2>The Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <blockquote>
+<p>User uploads a csv data file with headers, that looks like this.  The file will be read into a data frame and will have 3 columns and 12 monthly observations.  The first column will need to have month abbreviated values.</p>
+</blockquote>
+
+<table><thead>
+<tr>
+<th align="left">month</th>
+<th align="right">year1</th>
+<th align="right">year2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">jan</td>
+<td align="right">10</td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left">feb</td>
+<td align="right">20</td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left">mar</td>
+<td align="right">30</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="left">apr</td>
+<td align="right">40</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="left">may</td>
+<td align="right">50</td>
+<td align="right">60</td>
+</tr>
+<tr>
+<td align="left">jun</td>
+<td align="right">60</td>
+<td align="right">72</td>
+</tr>
+<tr>
+<td align="left">jul</td>
+<td align="right">70</td>
+<td align="right">84</td>
+</tr>
+<tr>
+<td align="left">aug</td>
+<td align="right">80</td>
+<td align="right">96</td>
+</tr>
+<tr>
+<td align="left">sep</td>
+<td align="right">90</td>
+<td align="right">108</td>
+</tr>
+<tr>
+<td align="left">oct</td>
+<td align="right">100</td>
+<td align="right">120</td>
+</tr>
+<tr>
+<td align="left">nov</td>
+<td align="right">110</td>
+<td align="right">132</td>
+</tr>
+<tr>
+<td align="left">dec</td>
+<td align="right">120</td>
+<td align="right">144</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Plot the Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <h4>User has 2 standard plots, one of which is a 2-line plot.</h4>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Summarize the Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <table><thead>
+<tr>
+<th align="left">Period</th>
+<th align="left">Year1</th>
+<th align="left">Year2</th>
+<th align="left">%Chg-YoY</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">dec</td>
+<td align="left">120</td>
+<td align="left">144</td>
+<td align="left">20</td>
+</tr>
+<tr>
+<td align="left">YTD</td>
+<td align="left">780</td>
+<td align="left">936</td>
+<td align="left">20</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="id1" style="background:lightblue;">
+  <hgroup>
+    <h2>That&#39;s It</h2>
+  </hgroup>
+  <article data-timings="">
+    <blockquote>
+<p>Try the app...<a href="https://mscuaycong.shinyapps.io/DDPAssign/">Click Here</a></p>
+</blockquote>
+
+<h1><strong>THANKS for your time.</strong></h1>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Overview'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The App'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The Data'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Plot the Data'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Summarize the Data'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='That&#39;s It'>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
