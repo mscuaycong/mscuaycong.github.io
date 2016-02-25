@@ -19,7 +19,7 @@ knit        : slidify::knit2slides
 * User can select a file to upload
 * User selects a month to summarize
 * Compares year over year change for the same year-to-date period
-* Compares year 2 month versus year month 1
+* Compares year 2 month versus year 1 month 
 
 
 ---
