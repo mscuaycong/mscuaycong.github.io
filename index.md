@@ -15,20 +15,28 @@ knit        : slidify::knit2slides
 
 ### This application will automate the usual comparative analysis we often find ourselves doing.
 
+* Takes 2 years of monthly data
+* User can select a file to upload
+* User selects a month to summarize
+* Compares year over year change for the same year-to-date period
+* Compares year 2 month versus year month 1
+
 
 ---
 
 ##  The App
 
 <div style='text-align: center;'>
-    <img height='560' src='figure/App.png' />
-</div>
+     <img height='560' src='http://mscuaycong.github.io/figure/App.PNG' />
+          </div>
+
 
 --- .class #id1 
 
 ## The Data
 
-> User uploads a csv data file with headers, that looks like this.  The file will be read into a data frame and will have 3 columns and 12 monthly observations.  The first column will need to have month abbreviated values.
+The file will be read into a data frame and will have 3 columns and 12 monthly observations.  The first column will need to have month abbreviated values.
+
 
 
 |month | year1| year2|
@@ -46,6 +54,8 @@ knit        : slidify::knit2slides
 |nov   |   110|   132|
 |dec   |   120|   144|
 
+
+
 ---
 
 ## Plot the Data
@@ -58,6 +68,8 @@ knit        : slidify::knit2slides
 ---
 
 ## Summarize the Data
+
+The monthly data is summarized, using the month selected by the user.
 
 
 |Period |Year1 |Year2 |%Chg-YoY |
@@ -74,5 +86,11 @@ knit        : slidify::knit2slides
 
 
 
-# **THANKS for your time.**
+<div style='text-align: center;'>
+
+<font size="10">THANKS for your time.</font>
+
+  </div>
+
+
 
