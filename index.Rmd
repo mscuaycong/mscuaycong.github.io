@@ -31,7 +31,9 @@ knit        : slidify::knit2slides
           </div>
 
 
---- .class #id1 
+--- &twocol
+
+*** =left
 
 ## The Data
 
@@ -45,13 +47,11 @@ The file will be read into a data frame and will have 3 columns and 12 monthly o
  year2<-year1*1.2
                
  MyData<-data.frame(month,year1,year2)
- kable(MyData)
- #MyData
+ #kable(MyData)
+ MyData
 ```
 
-
-
----
+*** =right
 
 ## Plot the Data
 #### User has 2 standard plots, one of which is a 2-line plot.
@@ -83,7 +83,7 @@ g
 ```
 
 
----
+---.class1 #id1 bg:lightblue
 
 ## Summarize the Data
 
@@ -111,8 +111,6 @@ The monthly data is summarized, using the month selected by the user.
  kable(disp)
 ```
 
-
----.class1 #id1 bg:lightblue
 
 ## That's It
 

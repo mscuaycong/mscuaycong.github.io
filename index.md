@@ -31,7 +31,9 @@ knit        : slidify::knit2slides
           </div>
 
 
---- .class #id1 
+--- &twocol
+
+*** =left
 
 ## The Data
 
@@ -39,24 +41,23 @@ The file will be read into a data frame and will have 3 columns and 12 monthly o
 
 
 
-|month | year1| year2|
-|:-----|-----:|-----:|
-|jan   |    10|    12|
-|feb   |    20|    24|
-|mar   |    30|    36|
-|apr   |    40|    48|
-|may   |    50|    60|
-|jun   |    60|    72|
-|jul   |    70|    84|
-|aug   |    80|    96|
-|sep   |    90|   108|
-|oct   |   100|   120|
-|nov   |   110|   132|
-|dec   |   120|   144|
+```
+##    month year1 year2
+## 1    jan    10    12
+## 2    feb    20    24
+## 3    mar    30    36
+## 4    apr    40    48
+## 5    may    50    60
+## 6    jun    60    72
+## 7    jul    70    84
+## 8    aug    80    96
+## 9    sep    90   108
+## 10   oct   100   120
+## 11   nov   110   132
+## 12   dec   120   144
+```
 
-
-
----
+*** =right
 
 ## Plot the Data
 #### User has 2 standard plots, one of which is a 2-line plot.
@@ -65,7 +66,7 @@ The file will be read into a data frame and will have 3 columns and 12 monthly o
 ![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png)
 
 
----
+---.class1 #id1 bg:lightblue
 
 ## Summarize the Data
 
@@ -77,8 +78,6 @@ The monthly data is summarized, using the month selected by the user.
 |dec    |120   |144   |20       |
 |YTD    |780   |936   |20       |
 
-
----.class1 #id1 bg:lightblue
 
 ## That's It
 
